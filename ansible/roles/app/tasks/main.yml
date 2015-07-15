@@ -1,0 +1,22 @@
+---
+# application tasks to be customized and to run after the main provision
+- name: update file db
+  sudo: yes
+  shell: updatedb
+
+- name: download toran proxy
+  get_url: url=https://toranproxy.com/releases/toran-proxy-v1.1.7.tgz dest=/tmp/toran.tgz
+
+- name: unpack toran proxy
+  unarchive: src=/tmp/toran.tgz dest=/tmp
+
+- name: install toran proxy
+  copy: src=/tmp/toran dest=/vagrant
+
+- name: toran proxy parameters
+  copy: src=/vagrant/toran/app/config/parameters.yml.dist dest=/vagrant/toran/app/config/parameters.yml
+
+- name: update server name
+  lineinfile: dest=/vagrant/toran/app/config/parameters.yml
+              regexp='toran_host'
+              line='toran_host: toranproxy.local'
