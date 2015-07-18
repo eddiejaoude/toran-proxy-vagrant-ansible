@@ -27,7 +27,7 @@ Vagrant.configure("2") do |config|
         v.name = "toran-proxy"
         v.customize [
             "modifyvm", :id,
-            "--name", "default",
+            "--name", "toran-proxy",
             "--memory", 2048,
             "--natdnshostresolver1", "on",
             "--cpus", 2,
