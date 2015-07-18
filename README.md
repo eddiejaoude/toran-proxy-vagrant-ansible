@@ -13,3 +13,20 @@ Easily setup an example/demo/personal usage of Toran Proxy - Packagist mirror
 3. Navigate to `toranproxy.local` and follow it's setup instructions
 
 If you wish to download the whole of Packagust's packges from GitHub for offline use, get a list from [Toran/Packagist Package list](https://github.com/eddiejaoude/toran-proxy-packages).
+
+---
+
+# Known issues
+
+A few people have had issues with CSRF token and Toran proxy setup form. The way to get around this is to turn off CSRF validation in the config.
+
+Update `toran/app/config/config.yml` where **csrf_protection** with:
+
+```yaml
+framework:
+    # ...
+    csrf_protection: false
+    # ...
+```
+
+Any questions raise an [issue here](https://github.com/eddiejaoude/toran-proxy-vagrant-ansible/issues).
