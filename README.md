@@ -1,6 +1,6 @@
 # Toran proxy with Vagrant & Ansible
 
-Easily setup an example/demo/personal usage of Toran Proxy - Packagist mirror
+Getting started an example/demo/personal usage of Toran Proxy - Packagist mirror
 
 # Requirements
 
