@@ -1,14 +1,14 @@
-# toran-proxy-vagrant-ansible
+# Toran proxy with Vagrant & Ansible
 
-Setup a demo/personal usage of Toran Proxy - Packagist mirror
+Easily setup an example/demo/personal usage of Toran Proxy - Packagist mirror
 
 # Requirements
 
 * vagrant
 
-# Usage
+# Example Usage
 
-1. vagrant up
+1. Clone & Run `vagrant up`
 2. Add host entry `192.168.33.100	toranproxy.local`
 3. Navigate to `toranproxy.local` and follow it's setup instructions
 
