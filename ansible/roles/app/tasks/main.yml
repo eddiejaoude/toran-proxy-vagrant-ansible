@@ -10,13 +10,22 @@
 - name: unpack toran proxy
   unarchive: src=/tmp/toran.tgz dest=/tmp
 
+- name: Check that the directory exists
+  stat: path=/vagrant/toran
+  register: toran_directory
+
 - name: install toran proxy
   copy: src=/tmp/toran dest=/vagrant
+  register: toran_install
+  when: not toran_directory.stat.exists
 
 - name: toran proxy parameters
   copy: src=/vagrant/toran/app/config/parameters.yml.dist dest=/vagrant/toran/app/config/parameters.yml
+  register: toran_config
+  when: toran_install.stat.exists is defined
 
 - name: update server name
   lineinfile: dest=/vagrant/toran/app/config/parameters.yml
               regexp='toran_host'
-              line='toran_host: toranproxy.local'
+              line="toran_host':' toranproxy.local"
+  when: toran_config.stat.exists is defined
