@@ -2,6 +2,8 @@
 
 Getting started an example/demo/personal usage of Toran Proxy - Packagist mirror
 
+See **Toran Proxy** [licensing](https://toranproxy.com) - remember, people worked hard on this and continue to do so, plus lets face it, it is an amazing dependency manager for **PHP**. Support your tools & community. (approximetly $10 / per month).
+
 # Requirements
 
 * vagrant
